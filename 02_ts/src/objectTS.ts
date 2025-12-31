@@ -93,19 +93,32 @@ const updateChai = (updates: Partial<Chai>) => {
 
 updateChai({ price: 35 });
 updateChai({ isHot: false });
-updateChai({})
+updateChai({});
 
-type ChaiOrder={
-    name ?: string
-    quantity ?: number
-}
+type ChaiOrder = {
+  name?: string;
+  quantity?: number;
+};
 
-const placeOrder = (order : Required<ChaiOrder>) =>{
-    console.log(order);
-    
-}
+const placeOrder = (order: Required<ChaiOrder>) => {
+  console.log(order);
+};
 
 placeOrder({
-    name: "Masala Chai",
-    quantity : 2
-})
+  name: "Masala Chai",
+  quantity: 2,
+});
+
+type Chai1 = {
+  name: string;
+  price: number;
+  isHot: boolean;
+  ingredents: string[];
+};
+
+type BasicChaiInfo = Pick<Chai1, "name" | "price">;
+
+const chaiInfo: BasicChaiInfo = {
+  name: "Lemon Tea",
+  price: 30,
+};
