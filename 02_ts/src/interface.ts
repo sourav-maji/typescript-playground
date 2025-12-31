@@ -47,3 +47,42 @@ class Chai implements CupSize {
 // class myRes implements Response {
 //   ok: boolean = true;
 // }
+
+// Union in typescript
+
+type TeaType = "masala" | "ginger" | "lemon"; // this type is called litteral type
+
+function orderChai(t: TeaType) {
+  console.log(t);
+}
+
+// Intersection in typescript
+type BaseChai = {teaLeaves : number}
+type Extra = {masala: number}
+
+type MasalaChai = BaseChai & Extra
+
+const cup : MasalaChai = {
+    teaLeaves :2,
+    masala:1
+}
+
+type User = {
+    username : string,
+    bio ?: string,
+}
+
+const u1 : User = { username : "sourav"}
+const u2 : User = { username : "sourav", bio: "sourav@sourav.com"}
+
+type Config = {
+    readonly appName : string,
+    version: number
+}
+
+const cfg : Config = {
+    appName: "Masterji",
+    version : 1
+}
+
+// cfg.appName = "ChaiCode" // Cannot assign to 'appName' because it is a read-only property.ts(2540)
