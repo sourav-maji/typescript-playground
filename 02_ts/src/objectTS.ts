@@ -93,3 +93,19 @@ const updateChai = (updates: Partial<Chai>) => {
 
 updateChai({ price: 35 });
 updateChai({ isHot: false });
+updateChai({})
+
+type ChaiOrder={
+    name ?: string
+    quantity ?: number
+}
+
+const placeOrder = (order : Required<ChaiOrder>) =>{
+    console.log(order);
+    
+}
+
+placeOrder({
+    name: "Masala Chai",
+    quantity : 2
+})
