@@ -22,5 +22,15 @@ interface Box<T> {
 }
 
 const numberBox: Box<number> = { content: 10 };
-const numberBoxCup : Box<string> = {content:"10"}
+const numberBoxCup: Box<string> = { content: "10" };
 
+// Ussage of generics
+interface ApiPromise<T> {
+  status: number;
+  data: T;
+}
+
+const res: ApiPromise<{ flavour: string }> = {
+  status: 200,
+  data: { flavour: "masala" },
+};
